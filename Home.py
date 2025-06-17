@@ -3,15 +3,15 @@ import streamlit as st
 
 st.set_page_config(page_title="Welcome", layout="centered")
 
-st.title("👋 Welcome to the Fire Staffing App")
+st.title("Welcome to the Staffing App")
 
 st.markdown("""
-This app helps track and analyze fire & EMS staffing through daily roster uploads.
+This app helps track and analyze DC staffing through daily roster uploads.
 
-### 🔍 Features:
-- **Roster Ingestion**: Upload Excel files to populate the live Supabase database.
-- **WDO Dashboard**: Analyze working day off data, shift codes, and hours worked.
+### Features:
+- **Roster Ingestion**: Upload Excel files to populate the live database.
+- **Dasboard**: Analyze staffing using the dashboard.
 
-Use the sidebar to navigate between pages 👉
+Use the sidebar to navigate between pages
 """)
 
