@@ -8,6 +8,12 @@ from zoneinfo import ZoneInfo
 from supabase import create_client, Client
 import os
 
+pwd = st.sidebar.text_input("Password", type="password")
+if pwd != st.secrets["app_password"]:
+    st.error("Incorrect password")
+    st.stop()
+
+
 # Load .env locally if SUPABASE_URL not in env
 if "SUPABASE_URL" not in os.environ:
     from dotenv import load_dotenv
@@ -19,12 +25,6 @@ def get_supabase_client() -> Client:
     url = os.getenv("SUPABASE_URL") or st.secrets["supabase"]["url"]
     key = os.getenv("SUPABASE_KEY") or st.secrets["supabase"]["key"]
     return create_client(url, key)
-
-pwd = st.sidebar.text_input("Password", type="password")
-if pwd != st.secrets["app_password"]:
-    st.error("Incorrect password")
-    st.stop()
-
 
 
 def extract_date_from_filename(
