@@ -16,12 +16,18 @@ st.write("Please enter the password to continue.")
 
 pwd = st.sidebar.text_input("Password", type="password")
 
-if pwd:
-    if pwd != st.secrets["app_password"]:
+if not pwd or pwd != st.secrets["app_password"]:
+    st.title("Welcome to the Roster Ingestion App")
+    st.write("Please enter the password to continue.")
+
+    if pwd and pwd != st.secrets["app_password"]:
         st.error("Incorrect password")
-        st.stop()
-else:
+
     st.stop()
+
+# If correct password, continue with app
+st.success("Access granted.")
+st.header("Upload Rosters")
 
 
 
