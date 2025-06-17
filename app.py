@@ -11,9 +11,14 @@ import os
 st.set_page_config(page_title="Roster Ingestion", layout="centered")
 
 pwd = st.sidebar.text_input("Password", type="password")
-if pwd != st.secrets["app_password"]:
-    st.error("Incorrect password")
+
+if pwd:
+    if pwd != st.secrets["app_password"]:
+        st.error("Incorrect password")
+        st.stop()
+else:
     st.stop()
+
 
 
 # Load .env locally if SUPABASE_URL not in env
