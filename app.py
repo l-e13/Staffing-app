@@ -20,6 +20,13 @@ def get_supabase_client() -> Client:
     key = os.getenv("SUPABASE_KEY") or st.secrets["supabase"]["key"]
     return create_client(url, key)
 
+pwd = st.sidebar.text_input("Password", type="password")
+if pwd != st.secrets["app_password"]:
+    st.error("Incorrect password")
+    st.stop()
+
+
+
 def extract_date_from_filename(
     fname: str,
     date_patterns: list[dict] | None = None,
