@@ -1,0 +1,32 @@
+# Python related
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+venv/
+env/
+*.venv/
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.iml
+
+# Environment variables
+.env
+
+# macOS
+.DS_Store
+
+# Streamlit
+.streamlit/
+
+# Logs
+*.log
+
+# Others (if any)
+
