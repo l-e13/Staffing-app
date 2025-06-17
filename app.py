@@ -236,7 +236,7 @@ def push_to_supabase(df: pd.DataFrame) -> int:
 
 # Streamlit UI
 st.set_page_config(page_title="Roster Ingestion", layout="centered")
-st.title("Roster Report Ingestion App")
+st.title("Roster Report Ingestion")
 
 st.markdown("""
 Upload one or more Excel roster reports. The app will clean each roster, push rows to database, and log each upload. <br><br>
