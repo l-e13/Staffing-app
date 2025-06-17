@@ -10,6 +10,10 @@ import os
 
 st.set_page_config(page_title="Roster Ingestion", layout="centered")
 
+
+st.title("👋 Welcome to the Roster Ingestion App")
+st.write("Please enter the password to continue.")
+
 pwd = st.sidebar.text_input("Password", type="password")
 
 if pwd:
