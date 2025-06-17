@@ -8,6 +8,8 @@ from zoneinfo import ZoneInfo
 from supabase import create_client, Client
 import os
 
+st.set_page_config(page_title="Roster Ingestion", layout="centered")
+
 pwd = st.sidebar.text_input("Password", type="password")
 if pwd != st.secrets["app_password"]:
     st.error("Incorrect password")
@@ -242,7 +244,6 @@ def push_to_supabase(df: pd.DataFrame) -> int:
     return len(records)
 
 # Streamlit UI
-st.set_page_config(page_title="Roster Ingestion", layout="centered")
 st.title("Roster Report Ingestion")
 
 st.markdown("""
