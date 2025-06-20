@@ -292,6 +292,10 @@ if uploaded_files:
                 #st.dataframe(df_clean.head())
 
                 df_final = rename_and_type(df_clean)
+                if "roster_date" in df_final.columns:
+                    df_final["roster_date"] = df_final["roster_date"].apply(
+                    lambda d: d.isoformat() if isinstance(d, date) else None
+                )
                 st.write("Final preview:")
                 st.dataframe(df_final.head())
 
