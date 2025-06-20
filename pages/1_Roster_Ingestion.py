@@ -207,7 +207,7 @@ def rename_and_type(df: pd.DataFrame) -> pd.DataFrame:
             )
     if "roster_date" in df2.columns:
         df2["roster_date"] = df2["roster_date"].apply(
-            lambda d: d.isoformat() if isinstance(d, _dt.date) else (None if pd.isna(d) else str(d))
+            lambda d: d.isoformat() if isinstance(d, _dt.date) else None 
         )
 
     df2 = df2.where(pd.notnull(df2), None)
