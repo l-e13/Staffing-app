@@ -51,6 +51,8 @@ def extract_date_from_filename(
         {'regex': r'(\d{1,2}[.-]\d{1,2}[.-]\d{4})', 'formats': ['%m.%d.%Y', '%m-%d-%Y']},
         {'regex': r'(\d{1,2}[/-]\d{1,2}[/-]\d{4})', 'formats': ['%m/%d/%Y']},
         {'regex': r'(\d{4}[.-]\d{1,2}[.-]\d{1,2})', 'formats': ['%Y.%m.%d', '%Y-%m-%d']},
+        {'regex': r'(\d{1,2}[.-]\d{1,2}[.-]\d{2})', 'formats': ['%m.%d.%y', '%m-%d-%y']}
+
     ]
     patterns = date_patterns if date_patterns is not None else default_patterns
 
