@@ -207,7 +207,7 @@ def rename_and_type(df: pd.DataFrame) -> pd.DataFrame:
             )
     if "roster_date" in df2.columns:
         df2["roster_date"] = df2["roster_date"].apply(
-            lambda d: d.isoformat() if isinstance(d, _dt.date) else None 
+            lambda d: d.isoformat() if isinstance(d, _dt.date) else (None if pd.isna(d) else str(d))
         )
 
     df2 = df2.where(pd.notnull(df2), None)
@@ -292,10 +292,6 @@ if uploaded_files:
                 #st.dataframe(df_clean.head())
 
                 df_final = rename_and_type(df_clean)
-                if "roster_date" in df_final.columns:
-                    df_final["roster_date"] = df_final["roster_date"].apply(
-                    lambda d: d.isoformat() if isinstance(d, date) else None
-                )
                 st.write("Final preview:")
                 st.dataframe(df_final.head())
 
